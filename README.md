@@ -76,10 +76,9 @@ What is the significance of Euler's identity in mathematics?
 \end{user}
 ```
 
-The model parameter may be any of the models supported by Openrouter. See an illustrative list in LLM_models.py.
-If the changes are made locally the agent will respond by creating new environments upon saving your changes.
-Any changes made remotely on the Overleaf server are pulled every 10 seconds (variable) and so the agent will respond
-as soon as changes are pulled to the local repo. You may track the agent progress in the logger window.
+The 'model' parameter may be any of the models supported by Openrouter. An illustrative list of models may be found in [LLM_models.py](LLM_models.py).
+Once saved, any changes in the local latex file are picked by the agent. The response would then be streamed/embedded within new 'reasoning' and 'answer' environments. Changes made remotely on the Overleaf server are pulled every 10 seconds to the local git repository (may be tweaked in AgenticLatexGitPush.py)
+which may postpone the agent response. Any of these processes are logged and may be viewed in the logger window.
 
 The agent will process your query and respond with:
 
@@ -92,6 +91,9 @@ The agent will process your query and respond with:
 [The agent's final, concise answer will appear here]
 \end{answer}
 ```
+
+During the reasoning phase the 'status' parameter would shift from 'start' to 'reasoning_<timestamp>_<id>' and finally 'completed_<timestamp>_<id>'.
+
 
 ## Latex Template Examples
 
