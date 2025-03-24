@@ -1,7 +1,8 @@
 # LatexColab - Collaborative LaTeX Agent
 
-<div align="center">
+<div align="left">
   <img src="assets/LC1.png" alt="LatexColab Logo" width="400">
+  <img src="assets/LC3.png" alt="LatexColab Logo" width="400">>
 </div>
 
 ## Overview
@@ -91,6 +92,11 @@ The agent will process your query and respond with:
 [The agent's final, concise answer will appear here]
 \end{answer}
 ```
+
+## Latex Template Examples
+
+See [LatexProjects/template.tex](LatexProjects/template.tex), and an example remote/local project under [LatexProjects/Example].
+
 
 ## Configuration
 
