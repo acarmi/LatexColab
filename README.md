@@ -1,8 +1,8 @@
 # LatexColab - Collaborative LaTeX Agent
 
 <div align="left">
-  <img src="assets/LC1.png" alt="LatexColab Logo" width="400">
-  <img src="assets/LC3.png" alt="LatexColab Logo" width="400">>
+  <img src="assets/LC.png" alt="LatexColab Logo" width="400">
+  <img src="assets/wavegrower.gif" alt="LatexColab Logo" width="400">>
 </div>
 
 ## Overview
@@ -117,12 +117,12 @@ The agent will process your query and respond with:
 \end{answer}
 ```
 
-During the reasoning phase the 'status' parameter would shift from 'start' to 'reasoning_<timestamp>_<id>' and finally 'completed_<timestamp>_<id>'.
+During the reasoning phase the 'status' parameter would shift from 'start' to 'reasoning_timestamp_id' and finally 'completed_timestamp_id'.
 
 
 ## Latex Template Examples
 
-See [LatexProjects/template.tex](LatexProjects/template.tex), and an example remote/local project under [LatexProjects/Example].
+See [LatexProjects/template.tex](LatexProjects/template.tex), and the example project [LatexProjects/Example](LatexProjects/Example/).
 
 
 ## Configuration
