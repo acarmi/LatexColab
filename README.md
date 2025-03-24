@@ -10,7 +10,32 @@
 LatexColab is a powerful tool that enables real-time collaboration with AI reasoning agents directly in your LaTeX documents. It maintains bidirectional synchronization between your local LaTeX files and Overleaf repositories, ensuring your work is always backed up and available.
 
 <div align="center">
-  <img src="assets/Jellyfish.gif" alt="LatexColab Animation" width="400">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="assets/sc1.png" target="_blank">
+          <img src="assets/sc1.png" alt="Compiled main.pdf" width="100%">
+          <br>
+          <em>Compiled main.pdf</em>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="assets/sc2.png" target="_blank">
+          <img src="assets/sc2.png" alt="Local main.tex" width="100%">
+          <br>
+          <em>Local main.tex</em>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="assets/sc3.png" target="_blank">
+          <img src="assets/sc3.png" alt="Overleaf main.tex" width="100%">
+          <br>
+          <em>Overleaf main.tex</em>
+        </a>
+      </td>
+    </tr>
+  </table>
+  <p><em>Click any image to view full size</em></p>
 </div>
 
 ## Features
@@ -76,7 +101,7 @@ What is the significance of Euler's identity in mathematics?
 \end{user}
 ```
 
-The 'model' parameter may be any of the models supported by Openrouter. An illustrative list of models may be found in [LLM_models.py](LLM_models.py).
+The 'model' parameter may be any of the models supported by Openrouter. An illustrative list of models may be found in [LLM_Models.py](LLM_Models.py).
 Once saved, any changes in the local latex file are picked by the agent. The response would then be streamed/embedded within new 'reasoning' and 'answer' environments. Changes made remotely on the Overleaf server are pulled every 10 seconds to the local git repository (may be tweaked in AgenticLatexGitPush.py)
 which may postpone the agent response. Any of these processes are logged and may be viewed in the logger window.
 
@@ -99,36 +124,6 @@ During the reasoning phase the 'status' parameter would shift from 'start' to 'r
 
 See [LatexProjects/template.tex](LatexProjects/template.tex), and an example remote/local project under [LatexProjects/Example].
 
-## PDF Viewer Examples
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="33%">
-        <a href="assets/sc1.png" target="_blank">
-          <img src="assets/sc1.png" alt="Compiled main.pdf" width="100%">
-          <br>
-          <em>Compiled main.pdf</em>
-        </a>
-      </td>
-      <td align="center" width="33%">
-        <a href="assets/sc2.png" target="_blank">
-          <img src="assets/sc2.png" alt="Local main.tex" width="100%">
-          <br>
-          <em>Local main.tex</em>
-        </a>
-      </td>
-      <td align="center" width="33%">
-        <a href="assets/sc3.png" target="_blank">
-          <img src="assets/sc3.png" alt="Overleaf main.tex" width="100%">
-          <br>
-          <em>Overleaf main.tex</em>
-        </a>
-      </td>
-    </tr>
-  </table>
-  <p><em>Click any image to view full size</em></p>
-</div>
 
 ## Configuration
 
