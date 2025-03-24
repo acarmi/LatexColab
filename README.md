@@ -97,6 +97,36 @@ The agent will process your query and respond with:
 
 See [LatexProjects/template.tex](LatexProjects/template.tex), and an example remote/local project under [LatexProjects/Example].
 
+## PDF Viewer Examples
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="assets/sc1.png" target="_blank">
+          <img src="assets/sc1.png" alt="Compiled main.pdf" width="100%">
+          <br>
+          <em>Compiled main.pdf</em>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="assets/sc2.png" target="_blank">
+          <img src="assets/sc2.png" alt="Local main.tex" width="100%">
+          <br>
+          <em>Local main.tex</em>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="assets/sc3.png" target="_blank">
+          <img src="assets/sc3.png" alt="Overleaf main.tex" width="100%">
+          <br>
+          <em>Overleaf main.tex</em>
+        </a>
+      </td>
+    </tr>
+  </table>
+  <p><em>Click any image to view full size</em></p>
+</div>
 
 ## Configuration
 
@@ -113,11 +143,9 @@ For detailed instructions on obtaining Overleaf credentials, see [Overleaf_git_a
 
 Any model available through OpenRouter can be used, including:
 
-- `claude-3.7-sonnet` - Anthropic's Claude
-- `claude-3-opus` - Anthropic's Claude (high-performance version)
-- `gpt-4-turbo` - OpenAI's GPT-4 
-- `o1` - Anthropic's Claude 3.5 Sonnet
-- And many more!
+- `claude-3.7-sonnet` - Anthropic's Claude 
+- `o1`, `o3-mini-high`  - OpenAI
+- `deepseek-r1`
 
 ## Advanced Features
 
@@ -154,8 +182,6 @@ If the agent isn't responding to your queries:
 - Verify the model name is correct
 
 ## License
-
-[Your License Here]
 
 ## Acknowledgments
 
