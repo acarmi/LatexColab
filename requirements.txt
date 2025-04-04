@@ -5,3 +5,5 @@ openai>=1.65.2
 PyQt5>=5.15.0
 PyQtWebEngine>=5.15.0
 PyInstaller>=5.1
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
