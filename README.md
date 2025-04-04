@@ -2,10 +2,10 @@
 
 This Full App needs you to run in terminal:
 
-`export OPENROUTER_API_KEY='your_actual_openrouter_key'`
-`cd LatexColab`
-`pip install -r requirements.txt`
-`uvicorn server:app --reload --port 8000`
+1. `export OPENROUTER_API_KEY='your_actual_openrouter_key'`
+2. `cd LatexColab`
+3. `pip install -r requirements.txt`
+4. `uvicorn server:app --reload --port 8000`
 
 Access the Frontend: Open your web browser and go to http://127.0.0.1:8000.
 
