@@ -9,6 +9,7 @@ url: https://github.com/arikanev/LatexColabHosted
 # Or use remote theme for more options:
 remote_theme: pages-themes/hacker
 
+
 # Custom variables for dark theme
 github:
   is_project_page: true
