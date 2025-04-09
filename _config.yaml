@@ -2,18 +2,25 @@
 title: LatexColab
 description: Collaborative LaTeX Agent
 url: https://acarmi.github.io/LatexColab
-url: https://github.com/arikanev/LatexColabHosted
 
 # Theme settings
-#theme: jekyll-theme-midnight  # This is a dark theme to start with
-# Or use remote theme for more options:
 remote_theme: pages-themes/hacker
-
 
 # Custom variables for dark theme
 github:
   is_project_page: true
-  repository_url: https://acarmi.github.io/LatexColab
+  repository_url: https://github.com/acarmi/LatexColab
+
+# Team repositories
+repositories:
+  main:
+    name: LatexColab
+    url: https://github.com/acarmi/LatexColab
+    description: Original LaTeX collaboration tool
+  extension:
+    name: LatexColabHosted
+    url: https://github.com/arikanev/LatexColabHosted
+    description: Server-based extension by Ariel Kanevsky
 
 # Build settings
 markdown: kramdown
