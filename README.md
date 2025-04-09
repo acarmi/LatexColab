@@ -8,7 +8,7 @@
 
 LatexColab is developed and maintained by:
 
-- **A. Carmi ** - *Original Creator* - [acarmi](https://github.com/acarmi)
+- **A. Carmi**  - *Original Creator* - [acarmi](https://github.com/acarmi)
 - **A. Kanevsky** - *Server Architecture Lead* - [arikanev](https://github.com/arikanev)
 
 ## Deployment Options
@@ -195,23 +195,6 @@ Any model available through OpenRouter can be used, including:
 - `o1`, `o3-mini-high`  - OpenAI
 - `deepseek-r1`
 
-## Advanced Features
-
-### Local Compilation
-
-The agent can automatically compile your LaTeX documents locally:
-
-```bash
-./lc path/to/your/file.tex --local-compile --open-pdf
-```
-
-### Package Management
-
-LatexColab can automatically install missing LaTeX packages:
-
-```bash
-./lc path/to/your/file.tex --auto-install-packages
-```
 
 ## Troubleshooting
 

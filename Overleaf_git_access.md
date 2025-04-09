@@ -53,32 +53,6 @@ Overleaf provides Git access to your projects, which LatexColab uses for synchro
 
 6. Copy the entire Git URL - you'll need both the URL and the Project ID for LatexColab
 
-## Step 3: Configure LatexColab
-
-Once you have both your Git access token and project information, you need to update the `lc` script with these details:
-
-1. Open the `lc` script in a text editor
-2. Find and update the following lines:
-
-```bash
-# Your Overleaf git URL
-OVERLEAF_GIT_URL="https://git.overleaf.com/YOUR_PROJECT_ID"
-
-# Your Overleaf login email (always 'git' for overleaf)
-GIT_USERNAME="git"
-
-# Your Overleaf API token (from Account Settings -> Git)
-API_TOKEN="your_git_access_token_here"
-
-# Local repository path
-REPO_PATH="$HOME/path/to/where/you/want/the/repo/YOUR_PROJECT_ID"
-```
-
-3. Replace the placeholders with your actual information:
-   - `YOUR_PROJECT_ID` in the `OVERLEAF_GIT_URL` with your project ID
-   - `your_git_access_token_here` with the Git access token from Step 1
-   - Adjust the `REPO_PATH` to your preferred local directory
-
 ## Security Notes
 
 1. **Never share your Git access token** - it provides full access to all your Overleaf projects
