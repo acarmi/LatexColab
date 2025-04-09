@@ -580,7 +580,7 @@ if __name__ == "__main__":
     
     # Add background GIFs
     server.add_gif_background(
-        gif_url=gif_to_base64_data_url("assets/LC1.png"),
+        gif_url=gif_to_base64_data_url("assets/LC.png"),
         level=0,
         transparency=0.8
     )

@@ -1,13 +1,22 @@
 # LatexColab - Collaborative LaTeX Agent
 
 <div align="left">
-  <img src="assets/LC.png" alt="LatexColab Logo" width="400">
-  <img src="assets/wavegrower.gif" alt="LatexColab Logo" width="400">>
+  <img src="assets/colab_emc2.png" alt="LatexColab Logo" width="100%">
 </div>
 
-## Overview
+## Project Team
 
-LatexColab is a powerful tool that enables real-time collaboration with AI reasoning agents directly in your LaTeX documents. It maintains bidirectional synchronization between your local LaTeX files and Overleaf repositories, ensuring your work is always backed up and available.
+LatexColab is developed and maintained by:
+
+- **A. Carmi ** - *Original Creator* - [acarmi](https://github.com/acarmi)
+- **A. Kanevsky** - *Server Architecture Lead* - [arikanev](https://github.com/arikanev)
+
+## Deployment Options
+
+LatexColab offers two deployment methods to suit different needs:
+
+1. **Local Script (Original Version)** - Self-contained local solution
+2. **Server + Client Architecture** - For teams and advanced users
 
 <div align="center">
   <table>
@@ -38,6 +47,10 @@ LatexColab is a powerful tool that enables real-time collaboration with AI reaso
   <p><em>Click any image to view full size</em></p>
 </div>
 
+## Overview
+
+LatexColab is a powerful tool that enables real-time collaboration with AI reasoning agents directly in your LaTeX documents. It maintains bidirectional synchronization between your local LaTeX files and Overleaf repositories, ensuring your work is always backed up and available.
+
 ## Features
 
 - 🧠 **In-document AI collaboration**: Interact with AI models (Claude, GPT-4, etc.) directly from your LaTeX documents
@@ -57,16 +70,20 @@ LatexColab bridges the gap between your local LaTeX editor and Overleaf, while a
 4. When you engage the AI agent in your document, it responds directly in your LaTeX file
 5. All changes are synchronized bidirectionally
 
-## Getting Started
+## Deployment Options
 
-### Prerequisites
+### Option 1: Local Script (Original Version)
+
+This is the simpler approach for individual users who want everything running on their local machine.
+
+#### Prerequisites
 
 - Python 3.7+
 - Git
 - LaTeX installation
 - Overleaf account with API access
 
-### Installation
+#### Installation
 
 1. Clone this repository:
 ```bash
@@ -84,13 +101,25 @@ pip install -r requirements.txt
 OPENROUTER_API_KEY = "your_openrouter_api_key"
 ```
 
-### Usage
+#### Usage
 
 The basic usage is simple:
 
 ```bash
-./lc path/to/your/local_file.tex
+./lc path/to/your/local_repo/local_file.tex  path/to/your/local_repo  overleaf_project_id
 ```
+
+A recommended local repository structre is:
+
+```bash
+path/to/your/local_repo/
+├── local_file.tex
+└── overleaf_project_id/
+    ├── .git/
+    └── local_file.tex
+```
+
+For detailed instructions on obtaining Overleaf credentials, see [Overleaf_git_access.md](Overleaf_git_access.md).
 
 To engage the AI agent, add a user environment to your LaTeX document:
 
@@ -100,10 +129,6 @@ What is the significance of Euler's identity in mathematics?
 %parameters: model=claude-3.7-sonnet, status=start
 \end{user}
 ```
-
-The 'model' parameter may be any of the models supported by Openrouter. An illustrative list of models may be found in [LLM_Models.py](LLM_Models.py).
-Once saved, any changes in the local latex file are picked by the agent. The response would then be streamed/embedded within new 'reasoning' and 'answer' environments. Changes made remotely on the Overleaf server are pulled every 10 seconds to the local git repository (may be tweaked in AgenticLatexGitPush.py)
-which may postpone the agent response. Any of these processes are logged and may be viewed in the logger window.
 
 The agent will process your query and respond with:
 
@@ -117,24 +142,50 @@ The agent will process your query and respond with:
 \end{answer}
 ```
 
-During the reasoning phase the 'status' parameter would shift from 'start' to 'reasoning_timestamp_id' and finally 'completed_timestamp_id'.
+### Option 2: Server + Client Architecture
 
+This architecture (developed by [arikanev]) consists of two main parts:
+
+1. **Server (`server.py`)**: Deployed (e.g., on Render), it synchronizes LaTeX content with Overleaf Git repositories and handles concurrent requests using Redis for locking.
+2. **Local Client (`local_client.py`)**: Run by the user locally to process AI prompts and communicate with the server.
+
+#### Deploying the Server
+
+Follow these general steps (e.g., for Render):
+
+- Push the code to a Git repository (GitHub, etc.)
+- Create a Redis instance (`Key Value` store) on Render and get its Internal URL
+- Create a Web Service on Render connected to your Git repo
+- **Runtime**: Python 3
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `uvicorn server:app --host 0.0.0.0 --port $PORT`
+- **Environment Variable**: Set `REDIS_URL` to the Internal URL of your Render Redis instance
+- Deploy the service and note its public URL
+
+#### Running the Local Client
+
+Prerequisites (Local Machine):
+- Python 3.7+
+- Install required Python packages: `pip install requests openai`
+- Your OpenRouter API Key
+- Your Overleaf Project's Git URL
+- An Overleaf Git Token/Password
+- The URL of your deployed LatexColab server
+
+Run the client script:
+
+```bash
+python3 local_client.py path/to/your/local_file.tex \
+    --key YOUR_OPENROUTER_API_KEY \
+    --server YOUR_DEPLOYED_SERVER_URL \
+    --git-url https://git.overleaf.com/YOUR_PROJECT_ID \
+    --git-token YOUR_OVERLEAF_GIT_TOKEN \
+    --relative-path path/within/overleaf/project/file.tex
+```
 
 ## Latex Template Examples
 
 See [LatexProjects/template.tex](LatexProjects/template.tex), and the example project [LatexProjects/Example](LatexProjects/Example/).
-
-
-## Configuration
-
-Edit the `lc` script to configure:
-
-- Your Overleaf git URL
-- Git credentials
-- Local repository path
-- Other sync parameters
-
-For detailed instructions on obtaining Overleaf credentials, see [Overleaf_git_access.md](Overleaf_git_access.md).
 
 ## Supported Models
 
@@ -184,3 +235,7 @@ If the agent isn't responding to your queries:
 
 - The Anthropic Claude team for their advanced LLM capabilities
 - The Overleaf team for their excellent LaTeX collaboration platform
+
+## Related Projects
+
+- [LatexColabHosted](https://github.com/arikanev/LatexColabHosted) - The server-based version by [Ariel Kanevsky]

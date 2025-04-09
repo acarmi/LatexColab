@@ -7,16 +7,10 @@
 source venv/bin/activate
 # ---------------- CONFIGURATION (Edit these values) ----------------
 # Your Overleaf git URL
-OVERLEAF_GIT_URL="https://git.overleaf.com/67c5d8972683f1ee5d2c2dc0"
 
 # Your Overleaf login email
 GIT_USERNAME="git"
 
-# Your Overleaf API token (from Account Settings -> API)
-API_TOKEN="olp_6hlJ0CYmKw4Vod1AKopYwiqOkwhgZq2Fd2aL"
-
-# Local repository path (where the git repo will be cloned)
-REPO_PATH="$HOME/PythonDev/LatexColab_V1/LatexProjects/Example/67c5d8972683f1ee5d2c2dc0"
 
 # Path to the Python script
 PYTHON_SCRIPT="AgenticLatexGitPush.py"
@@ -25,13 +19,16 @@ LOGGER_SERVER_SCRIPT="standalone_logger.py"
 # ---------------- END CONFIGURATION ----------------
 
 # Show usage if no arguments provided
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 path/to/your/latex_file.tex"
+if [ $# -lt 3 ]; then
+    echo "Usage: $0 path/to/your/local_file.tex  path/to/cloned/overleaf/git_repo  overleaf_project_id"
     exit 1
 fi
 
 # Get the absolute path of the LaTeX file
 LATEX_FILE=$(realpath "$1")
+OVERLEAF_GIT_URL="https://git.overleaf.com/"$3
+# Local repository path (where the git repo will be cloned)
+REPO_PATH=$(realpath "$2")/$3
 
 # Check if the file exists
 if [ ! -f "$LATEX_FILE" ]; then
@@ -70,14 +67,14 @@ python3 "$AGENT_SCRIPT" "$LATEX_FILE" \
 
 python3 "$LOGGER_SERVER_SCRIPT" &
 
-sleep 2s
+sleep 3s
 
 python3 "$PYTHON_SCRIPT" "$LATEX_FILE" \
     --git-url "$OVERLEAF_GIT_URL" \
     --git-username "$GIT_USERNAME" \
     --prompt-password \
     --extract-project-id \
-    --api-token "$API_TOKEN" \
+    --api-token "$OVERLEAF_GIT_API_TOKEN" \
     --repo-path "$REPO_PATH"
 # --auto-install-packages \
 # --local-compile \

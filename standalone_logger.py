@@ -36,7 +36,7 @@ class LoggerApp(QMainWindow):
         )
         
         self.server.add_gif_background(
-            gif_url=gif_to_base64_data_url("assets/wavegrower.gif"),
+            gif_url=gif_to_base64_data_url("assets/lc1.gif"),
             level=1,
             transparency=0.9
         )
