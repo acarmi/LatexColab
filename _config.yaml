@@ -1,0 +1,18 @@
+# Site settings
+title: LatexColab
+description: Collaborative LaTeX Agent
+url: https://acarmi.github.io/LatexColab
+url: https://github.com/arikanev/LatexColabHosted
+
+# Theme settings
+#theme: jekyll-theme-midnight  # This is a dark theme to start with
+# Or use remote theme for more options:
+remote_theme: pages-themes/hacker
+
+# Custom variables for dark theme
+github:
+  is_project_page: true
+  repository_url: https://acarmi.github.io/LatexColab
+
+# Build settings
+markdown: kramdown

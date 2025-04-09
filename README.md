@@ -1,4 +1,3 @@
-# LatexColab - Collaborative LaTeX Agent
 
 <div align="left">
   <img src="assets/colab_emc2.png" alt="LatexColab Logo" width="100%">
