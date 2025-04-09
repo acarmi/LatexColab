@@ -86,8 +86,8 @@ This is the simpler approach for individual users who want everything running on
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/acarmi/latexcolab.git
-cd latexcolab
+git clone https://github.com/acarmi/LatexColab.git
+cd LatexColab
 ```
 
 2. Install the required dependencies:
