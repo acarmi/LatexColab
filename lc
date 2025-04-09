@@ -74,7 +74,7 @@ python3 "$PYTHON_SCRIPT" "$LATEX_FILE" \
     --git-username "$GIT_USERNAME" \
     --prompt-password \
     --extract-project-id \
-    --api-token "$OVERLEAF_GIT_API_TOKEN" \
+    --api-token "$OVERLEAF_GIT_TOKEN" \
     --repo-path "$REPO_PATH"
 # --auto-install-packages \
 # --local-compile \
