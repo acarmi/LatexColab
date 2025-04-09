@@ -86,7 +86,7 @@ This is the simpler approach for individual users who want everything running on
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/latexcolab.git
+git clone https://github.com/acarmi/latexcolab.git
 cd latexcolab
 ```
 
