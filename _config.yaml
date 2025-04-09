@@ -4,8 +4,7 @@ description: Collaborative LaTeX Agent
 url: https://acarmi.github.io/LatexColab
 
 # Theme settings
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme: pages-themes/midnight
 
 # Custom variables for dark theme
 github:
