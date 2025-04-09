@@ -15,7 +15,7 @@ LatexColab is developed and maintained by:
 LatexColab offers two deployment methods to suit different needs:
 
 1. **Local Script (Original Version)** - Self-contained local solution
-2. **Server + Client Architecture** - For teams and advanced users
+2. **Server + Client Architecture** - For teams and advanced users. [LatexColabHosted](https://github.com/arikanev/LatexColabHosted)
 
 <div align="center">
   <table>
