@@ -97,8 +97,9 @@ pip install -r requirements.txt
 ```
 
 3. Set up your API keys in `set_api_keys.py`:
-```python
+```bash
 OPENROUTER_API_KEY = "your_openrouter_api_key"
+OVERLEAF_GIT_API_TOKEN = "your_overleaf_git_api_token
 ```
 
 #### Usage
